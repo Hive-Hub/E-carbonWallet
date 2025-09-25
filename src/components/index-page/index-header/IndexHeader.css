@@ -1,0 +1,224 @@
+/* Header Container */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: rgba(248, 250, 252, 0.95);
+  -webkit-backdrop-filter: blur(12px) saturate(180%) brightness(110%);
+  backdrop-filter: blur(12px) saturate(180%) brightness(110%);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.dark .header {
+  background-color: rgba(15, 23, 42, 0.8);
+}
+
+/* Layout */
+.header-container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .header-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.header-content {
+  display: flex;
+  height: 3.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo Section */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-icon {
+  height: 2rem;
+  width: 2rem;
+  color: #10b981; /* Primary color - adjust as needed */
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111827; /* Gray 900 */
+}
+
+.dark .logo-text {
+  color: #ffffff;
+}
+
+/* Navigation */
+.navigation {
+  display: none;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .navigation {
+    display: flex;
+  }
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151; /* Gray 700 */
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: 0.5rem;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.nav-link:hover::before {
+  opacity: 0.1;
+  transform: scale(1);
+}
+
+.nav-link:hover {
+  color: #10b981;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+}
+
+.dark .nav-link {
+  color: #d1d5db; /* Gray 300 */
+}
+
+.dark .nav-link:hover {
+  color: #10b981; /* Primary color */
+}
+
+/* Actions Section */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.login-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4b5563; /* Gray 600 */
+  transition: color 0.2s ease-in-out;
+}
+
+.dark .login-link {
+  color: #d1d5db; /* Gray 300 */
+}
+
+.login-link:hover {
+  color: #10b981; /* Primary color */
+}
+
+.dark .login-link:hover {
+  color: #10b981; /* Primary color */
+}
+
+.primary-button {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  font-weight: bold;
+  font-size: 0.875rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.primary-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease-in-out;
+}
+
+.primary-button:hover::before {
+  left: 100%;
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+  background: linear-gradient(135deg, #059669, #047857);
+}
+
+/* Mobile Menu Button */
+.mobile-menu-button {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 9999px;
+  color: #4b5563; /* Gray 600 */
+  transition: background-color 0.2s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu-button {
+    display: none;
+  }
+}
+
+.dark .mobile-menu-button {
+  color: #d1d5db; /* Gray 300 */
+}
+
+.mobile-menu-button:hover {
+  background-color: #e5e7eb; /* Gray 200 */
+}
+
+.dark .mobile-menu-button:hover {
+  background-color: #1f2937; /* Gray 800 */
+}
+
+.menu-icon {
+  height: 1.5rem;
+  width: 1.5rem;
+}
